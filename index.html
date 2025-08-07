@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GO Community - Protótipos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F5F5F5;
+        }
+        .font-nunito {
+            font-family: 'Nunito', sans-serif;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #3498DB, #2ECC71);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .cta-button {
+            background: linear-gradient(90deg, #3498DB, #2ECC71);
+        }
+        .modal {
+            transition: opacity 0.25s ease;
+        }
+        .modal-content {
+            transition: transform 0.25s ease;
+        }
+        .nav-active {
+            color: #2ECC71;
+        }
+        .merchant-nav-active, .donor-nav-active, .gov-nav-active {
+             color: #2ECC71;
+             background-color: #F0FDF4;
+        }
+        .vote-button.voted {
+            background-color: #2ECC71;
+            color: white;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-[#34495E]">
+
+    <!-- Landing Page Screen (Initial Screen) -->
+    <div id="landing-page-screen">
+        <div class="container mx-auto px-4">
+            <header class="py-6 flex justify-between items-center">
+                <h1 class="text-2xl font-nunito font-bold text-[#34495E]">GO Community</h1>
+                <button onclick="showPrototype('menu')" class="bg-gray-200 text-sm font-bold py-2 px-4 rounded-full hover:bg-gray-300 transition-colors">Acessar Protótipos</button>
+            </header>
+
+            <section class="text-center py-16 md:py-24">
+                <h1 class="font-nunito font-black text-4xl md:text-6xl leading-tight mb-4">Suas compras diárias <br>constroem um <span class="gradient-text">bairro melhor</span>.</h1>
+                <p class="max-w-3xl mx-auto text-lg md:text-xl text-gray-600 mb-8">A GO Community é a plataforma que transforma o poder do seu consumo local em projetos reais para a sua comunidade. Veja como cada café que você toma ajuda a reformar a praça do seu bairro.</p>
+                <div class="flex justify-center">
+                    <a href="#video" class="cta-button text-white font-bold text-lg py-4 px-8 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">Veja como funciona</a>
+                </div>
+            </section>
+
+            <section id="video" class="py-16">
+                <div class="bg-white p-4 md:p-8 rounded-2xl shadow-lg">
+                    <h2 class="font-nunito font-bold text-3xl md:text-4xl text-center mb-8">Nossa Visão em 3 Minutos</h2>
+                    <div style="position: relative; overflow: hidden; aspect-ratio: 1920/1080; border-radius: 1rem;">
+                        <iframe src="https://share.synthesia.io/embeds/videos/f4c9ddc2-d1db-4b25-aabe-8e5fda0e77d8" loading="lazy" title="Synthesia video player - Go Community: Transformando Cidades em Comunidades Conectadas" allowfullscreen allow="encrypted-media; fullscreen;" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0; overflow:hidden;"></iframe>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-16">
+                <div class="text-center mb-12">
+                    <h2 class="font-nunito font-bold text-3xl md:text-4xl">O Ciclo Virtuoso do Impacto Local</h2>
+                    <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Nossa plataforma cria um ecossistema onde a prosperidade é compartilhada, conectando moradores, comerciantes e a comunidade.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-white p-8 rounded-xl shadow-md">
+                        <div class="bg-blue-100 w-16 h-16 rounded-full mx-auto flex items-center justify-center mb-4"><span class="text-3xl">🛍️</span></div>
+                        <h3 class="font-nunito font-bold text-xl mb-2">1. Você Compra</h3>
+                        <p class="text-gray-600">Você apoia o comércio local, comprando nos seus lugares favoritos do bairro que fazem parte da nossa rede.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-md">
+                        <div class="bg-green-100 w-16 h-16 rounded-full mx-auto flex items-center justify-center mb-4"><span class="text-3xl">💰</span></div>
+                        <h3 class="font-nunito font-bold text-xl mb-2">2. O Bairro Ganha</h3>
+                        <p class="text-gray-600">Parte do valor da sua compra vira "Cashback Social", um recurso que vai direto para um fundo transparente do seu bairro.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-md">
+                        <div class="bg-yellow-100 w-16 h-16 rounded-full mx-auto flex items-center justify-center mb-4"><span class="text-3xl">🌳</span></div>
+                        <h3 class="font-nunito font-bold text-xl mb-2">3. O Impacto Acontece</h3>
+                        <p class="text-gray-600">A própria comunidade vota e decide como usar os fundos em "Pulsos" — projetos reais que melhoram a vida de todos.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="contato" class="py-16">
+                <div class="bg-white p-8 md:p-12 rounded-2xl shadow-lg text-center">
+                    <h2 class="font-nunito font-bold text-3xl md:text-4xl mb-4">Vamos Construir Juntos?</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto mb-8">Se você é um líder comunitário, comerciante ou gestor público e acredita no poder da nossa visão, queremos conversar com você.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                        <div class="bg-gray-100 p-6 rounded-xl">
+                            <span class="text-4xl">✉️</span>
+                            <h3 class="font-nunito font-bold text-xl my-2">E-mail</h3>
+                            <p class="text-gray-600 mb-4">Para parcerias, imprensa e informações gerais.</p>
+                            <a href="mailto:contato@gocommunity.app" class="font-bold text-lg text-[#34495E] hover:text-[#2ECC71]">contato@gocommunity.app</a>
+                        </div>
+                        <div class="bg-gray-100 p-6 rounded-xl">
+                            <span class="text-4xl">📱</span>
+                            <h3 class="font-nunito font-bold text-xl my-2">WhatsApp</h3>
+                            <p class="text-gray-600 mb-4">Para um contato mais direto e tirar dúvidas rápidas.</p>
+                            <a href="https://wa.me/5549991425965" target="_blank" class="font-bold text-lg text-[#34495E] hover:text-[#2ECC71]">+55 49 99142-5965</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="text-center py-8 text-gray-500">
+                <p>&copy; 2025 GO Community. Todos os direitos reservados.</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Menu Screen -->
+    <div id="menu-screen" class="min-h-screen hidden flex-col items-center justify-center p-4">
+        <div class="w-full max-w-7xl mx-auto flex justify-start py-4">
+             <button onclick="showPrototype('landing-page')" class="text-sm text-[#3498DB] font-semibold">&larr; Voltar à Página Inicial</button>
+        </div>
+        <h1 class="text-4xl font-nunito font-bold text-[#34495E] mb-2">GO Community</h1>
+        <p class="text-lg text-gray-600 mb-8">Hub de Apresentação de Protótipos</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 w-full max-w-7xl">
+            <div onclick="showPrototype('morador')" class="bg-white p-8 rounded-2xl shadow-lg cursor-pointer hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center"><img src="https://randomuser.me/api/portraits/women/68.jpg" class="rounded-full w-24 h-24 mb-4 border-4 border-green-200" alt="Avatar da Dona Maria"><h2 class="text-2xl font-nunito font-bold text-[#34495E]">Visão do Morador</h2><p class="text-gray-500 mt-2">Explore a experiência da Dona Maria, vendo o impacto das suas compras no bairro.</p></div>
+            <div onclick="showPrototype('comerciante')" class="bg-white p-8 rounded-2xl shadow-lg cursor-pointer hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center"><img src="https://randomuser.me/api/portraits/men/64.jpg" class="rounded-full w-24 h-24 mb-4 border-4 border-blue-200" alt="Avatar do Seu João"><h2 class="text-2xl font-nunito font-bold text-[#34495E]">Visão do Comerciante</h2><p class="text-gray-500 mt-2">Veja como o Seu João utiliza a plataforma para crescer e se conectar com a comunidade.</p></div>
+            <div onclick="showPrototype('doador')" class="bg-white p-8 rounded-2xl shadow-lg cursor-pointer hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center"><img src="https://randomuser.me/api/portraits/men/52.jpg" class="rounded-full w-24 h-24 mb-4 border-4 border-yellow-200" alt="Avatar do Gestor Social"><h2 class="text-2xl font-nunito font-bold text-[#34495E]">Visão do Doador</h2><p class="text-gray-500 mt-2">Acompanhe como o Rotary Club utiliza a plataforma para gerir e comprovar o seu impacto.</p></div>
+            <div onclick="showPrototype('gestor')" class="bg-white p-8 rounded-2xl shadow-lg cursor-pointer hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center"><img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-full w-24 h-24 mb-4 border-4 border-gray-300" alt="Avatar do Gestor Público"><h2 class="text-2xl font-nunito font-bold text-[#34495E]">Visão do Gestor Público</h2><p class="text-gray-500 mt-2">Descubra como a Prefeitura usa dados para tomar decisões mais inteligentes para a cidade.</p></div>
+        </div>
+    </div>
+
+    <!-- Dynamic Content Containers -->
+    <div id="morador-prototype" class="hidden"></div>
+    <div id="comerciante-prototype" class="hidden"></div>
+    <div id="doador-prototype" class="hidden"></div>
+    <div id="gestor-prototype" class="hidden"></div>
+    <div id="propose-pulse-screen" class="hidden"></div>
+    <div id="pulse-detail-screen" class="hidden"></div>
+    <div id="supplier-registration-screen" class="hidden"></div>
+
+    <!-- Modal Gemini -->
+    <div id="geminiModal" class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 opacity-0 pointer-events-none">
+        <div class="modal-content bg-white rounded-2xl shadow-xl w-full max-w-lg p-6 transform scale-95">
+            <div class="flex justify-between items-center mb-4"><h3 id="modalTitle" class="font-nunito font-bold text-xl text-[#34495E]"></h3><button onclick="closeModal()" class="text-gray-400 hover:text-gray-600 text-3xl leading-none">&times;</button></div>
+            <div id="modalBody" class="text-gray-700 space-y-2 max-h-96 overflow-y-auto">
+                <div id="loadingSpinner" class="flex justify-center items-center h-24"><div class="animate-spin rounded-full h-12 w-12 border-b-2 border-[#2ECC71]"></div></div>
+                <div id="modalContent" class="hidden p-4 bg-gray-50 rounded-lg whitespace-pre-wrap"></div>
+            </div>
+            <div class="mt-6 flex justify-end space-x-3">
+                <button id="copyButton" onclick="copyToClipboard()" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-2 px-4 rounded-lg transition-colors duration-300 hidden">Copiar Texto</button>
+                <button onclick="closeModal()" class="bg-[#34495E] hover:bg-[#2c3e50] text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- CONTEÚDO HTML DOS PROTÓTIPOS ---
+        const moradorHTML = `<div class="max-w-sm mx-auto bg-white shadow-lg h-screen flex flex-col relative"><header class="p-4 flex justify-between items-center border-b border-gray-200"><button onclick="showPrototype('menu')" class="text-sm text-[#3498DB] font-semibold">&larr; Voltar ao Menu</button><div class="flex items-center space-x-2"><span class="text-sm text-gray-600">Olá, Dona Maria!</span><img src="https://randomuser.me/api/portraits/women/68.jpg" class="rounded-full w-10 h-10" alt="Avatar da Dona Maria"></div></header><main id="home-screen-morador" class="flex-grow p-4 overflow-y-auto"></main><main id="map-screen-morador" class="flex-grow hidden flex-col"></main><main id="plus-pulsos-screen-morador" class="flex-grow p-4 overflow-y-auto hidden"></main><main id="pulsos-screen-morador" class="flex-grow p-4 overflow-y-auto hidden"></main><main id="perfil-screen-morador" class="flex-grow p-4 overflow-y-auto hidden bg-gray-50"></main><footer class="bg-white border-t border-gray-200 p-2"><nav class="flex justify-around"><a href="#" id="nav-home-morador" class="text-center nav-active w-full p-2 rounded-lg"><svg class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg><span class="text-xs font-medium">Início</span></a><a href="#" id="nav-map-morador" class="text-center text-gray-500 hover:text-[#2ECC71] w-full p-2 rounded-lg"><svg class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg><span class="text-xs font-medium">Mapa</span></a><a href="#" id="nav-plus-pulsos-morador" class="text-center text-gray-500 hover:text-[#2ECC71] w-full p-2 rounded-lg"><svg class="w-6 h-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><span class="text-xs font-medium">+Pulsos</span></a><a href="#" id="nav-pulsos-morador" class="text-center text-gray-500 hover:text-[#2ECC71] w-full p-2 rounded-lg"><svg class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg><span class="text-xs font-medium">Meus Pulsos</span></a><a href="#" id="nav-perfil-morador" class="text-center text-gray-500 hover:text-[#2ECC71] w-full p-2 rounded-lg"><svg class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg><span class="text-xs font-medium">Perfil</span></a></nav></footer></div>`;
+        const comercianteHTML = `<div class="max-w-4xl mx-auto bg-white shadow-lg flex flex-col min-h-screen"><header class="p-4 flex justify-between items-center border-b border-gray-200 bg-white"><div><h1 class="text-2xl font-nunito font-bold text-[#34495E]">GO Community</h1><p class="text-sm text-gray-500">Painel do Comerciante</p></div><button onclick="showPrototype('menu')" class="text-sm text-[#3498DB] font-semibold">&larr; Voltar ao Menu</button><div class="flex items-center space-x-3"><div class="text-right"><p class="font-bold text-[#34495E]">Seu João</p><p class="text-xs text-gray-500">Mercadinho do Zé</p></div><img src="https://randomuser.me/api/portraits/men/64.jpg" class="rounded-full w-12 h-12" alt="Avatar do Seu João"></div></header><div class="flex flex-1"><aside class="w-64 bg-gray-50 p-4 border-r"><nav class="flex flex-col space-y-2"><a href="#" id="nav-home-comerciante" class="flex items-center space-x-3 p-3 rounded-lg font-bold merchant-nav-active"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg><span>Início</span></a><a href="#" id="nav-clientes-comerciante" class="flex items-center space-x-3 p-3 rounded-lg text-gray-600 hover:bg-gray-100"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg><span>Clientes</span></a><a href="#" id="nav-pulsos-comerciante" class="flex items-center space-x-3 p-3 rounded-lg text-gray-600 hover:bg-gray-100"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg><span>Pulsos do Bairro</span></a><a href="#" id="nav-campanhas-comerciante" class="flex items-center space-x-3 p-3 rounded-lg text-gray-600 hover:bg-gray-100"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.834 9.168-4.432l.256-.512a1.76 1.76 0 013.417.592l-2.147 6.15M18 13a3 3 0 100-6M5.436 13.683L5 13m0 0l-.242.551a2.003 2.003 0 00.416 2.233l.496.496a2.003 2.003 0 002.233.416l.551-.242m0 0l-2.829-2.829m0 0l2.829 2.829" /></svg><span>Campanhas</span></a><a href="#" id="nav-perfil-comerciante" class="flex items-center space-x-3 p-3 rounded-lg text-gray-600 hover:bg-gray-100"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg><span>Perfil & Loja</span></a></nav></aside><div class="flex-1 p-6 bg-gray-100"><main id="home-screen-comerciante"></main><main id="clientes-screen-comerciante" class="hidden"></main><main id="pulsos-screen-comerciante" class="hidden"></main><main id="campanhas-screen-comerciante" class="hidden"></main><main id="perfil-screen-comerciante" class="hidden"></main></div></div></div>`;
+        const doadorHTML = `<div class="max-w-4xl mx-auto bg-white shadow-lg flex flex-col min-h-screen"><header class="p-4 flex justify-between items-center border-b border-gray-200 bg-white"><div><h1 class="text-2xl font-nunito font-bold text-[#34495E]">GO Community</h1><p class="text-sm text-gray-500">Painel do Parceiro de Impacto</p></div><button onclick="showPrototype('menu')" class="text-sm text-[#3498DB] font-semibold">&larr; Voltar ao Menu</button><div class="flex items-center space-x-3"><div class="text-right"><p class="font-bold text-[#34495E]">Sr. Carlos</p><p class="text-xs text-gray-500">Rotary Club Chapecó</p></div><img src="https://randomuser.me/api/portraits/men/52.jpg" class="rounded-full w-12 h-12" alt="Avatar do Gestor Social"></div></header><div class="flex flex-1"><aside class="w-64 bg-gray-50 p-4 border-r"><nav class="flex flex-col space-y-2"><a href="#" id="nav-projetos-doador" class="flex items-center space-x-3 p-3 rounded-lg font-bold donor-nav-active"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg><span>Meus Projetos</span></a><a href="#" id="nav-explorar-doador" class="flex items-center space-x-3 p-3 rounded-lg text-gray-600 hover:bg-gray-100"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg><span>Explorar Pulsos</span></a><a href="#" id="nav-financeiro-doador" class="flex items-center space-x-3 p-3 rounded-lg text-gray-600 hover:bg-gray-100"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg><span>Financeiro</span></a></nav></aside><div class="flex-1 p-6 bg-gray-100"><main id="projetos-screen-doador"></main><main id="explorar-screen-doador" class="hidden"></main><main id="financeiro-screen-doador" class="hidden"></main></div></div></div>`;
+        const gestorHTML = `<div class="max-w-6xl mx-auto bg-white shadow-lg flex flex-col min-h-screen"><header class="p-4 flex justify-between items-center border-b border-gray-200 bg-white"><div><h1 class="text-2xl font-nunito font-bold text-[#34495E]">GO Community</h1><p class="text-sm text-gray-500">Painel do Gestor Público</p></div><button onclick="showPrototype('menu')" class="text-sm text-[#3498DB] font-semibold">&larr; Voltar ao Menu</button><div class="flex items-center space-x-3"><div class="text-right"><p class="font-bold text-[#34495E]">Secretaria</p><p class="text-xs text-gray-500">Desenvolvimento Econômico</p></div><img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-full w-12 h-12" alt="Avatar do Gestor Público"></div></header><div class="flex flex-1"><aside class="w-64 bg-gray-50 p-4 border-r"><nav class="flex flex-col space-y-2"><a href="#" id="nav-observatorio-gestor" class="flex items-center space-x-3 p-3 rounded-lg font-bold gov-nav-active"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg><span>Observatório</span></a><a href="#" id="nav-planejamento-gestor" class="flex items-center space-x-3 p-3 rounded-lg text-gray-600 hover:bg-gray-100"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg><span>Planejamento</span></a></nav></aside><div class="flex-1 p-6 bg-gray-100"><main id="observatorio-screen-gestor"></main><main id="planejamento-screen-gestor" class="hidden"></main></div></div></div>`;
+        const proposePulseHTML = `<div class="max-w-2xl mx-auto bg-white shadow-lg flex flex-col min-h-screen"><header class="p-4 flex justify-between items-center border-b border-gray-200 bg-white"><h1 class="text-2xl font-nunito font-bold text-[#34495E]">Proponha um Pulso</h1><button onclick="showPrototype(currentOriginator)" class="text-sm text-gray-600 font-semibold">Cancelar</button></header><main class="flex-1 p-6 bg-gray-50"><div class="space-y-6"><div><label for="pulse-title-input" class="block text-sm font-medium text-gray-700">Título da Ideia</label><input type="text" id="pulse-title-input" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500" placeholder="Ex: Novos bancos para a praça"><p class="mt-1 text-xs text-gray-500">Seja claro e direto. Qual é a sua ideia?</p></div><div><div class="flex justify-between items-center"><label for="pulse-description-input" class="block text-sm font-medium text-gray-700">Descreva a sua ideia</label><button onclick="helpDescribePulse()" class="text-sm text-[#3498DB] font-semibold flex items-center space-x-1"><span>✨ Ajudar a Descrever</span></button></div><textarea id="pulse-description-input" rows="5" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500" placeholder="Explique por que esta ideia é importante para o bairro e o que precisa ser feito."></textarea></div><div><label for="pulse-cost-input" class="block text-sm font-medium text-gray-700">Custo Estimado (R$)</label><input type="number" id="pulse-cost-input" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500" placeholder="2000"></div><div><label for="pulse-budget-input" class="block text-sm font-medium text-gray-700">Anexar Orçamento Detalhado</label><input type="file" id="pulse-budget-input" class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100"/></div><button onclick="submitPulseProposal()" class="w-full bg-gradient-to-r from-[#3498DB] to-[#2ECC71] hover:opacity-90 text-white font-bold py-3 px-4 rounded-lg transition-opacity duration-300">Enviar Proposta para Análise</button></div></main></div>`;
+        const pulseDetailHTML = `<div class="max-w-4xl mx-auto bg-white shadow-lg flex flex-col min-h-screen"><header class="p-4 flex justify-between items-center border-b border-gray-200 bg-white"><button onclick="showPrototype(currentOriginator)" class="text-sm text-[#3498DB] font-semibold">&larr; Voltar</button><h1 class="text-2xl font-nunito font-bold text-[#34495E]">Detalhes do Pulso</h1><div class="w-20"></div></header><main class="flex-1 p-6 bg-gray-50 overflow-y-auto"><div class="bg-white p-6 rounded-xl shadow-sm mb-6"><div class="flex justify-between items-start mb-4"><div><h2 class="text-3xl font-nunito font-bold text-[#34495E]">Reforma do Parquinho da Praça</h2><p class="text-sm text-gray-500">Proposto por: Rotary Club Chapecó</p></div><span class="text-sm font-bold bg-blue-100 text-blue-800 py-1 px-3 rounded-full">Em Andamento</span></div><p class="text-gray-700 mb-4">Nosso objetivo é revitalizar o parquinho central, trocando brinquedos antigos por novos e mais seguros, e instalando um piso emborrachado para a proteção das nossas crianças. Este é um espaço vital para a convivência das famílias e merece o nosso cuidado.</p><div class="w-full bg-gray-200 rounded-full h-4"><div class="bg-gradient-to-r from-[#3498DB] to-[#2ECC71] h-4 rounded-full" style="width: 65%;"></div></div><div class="flex justify-between text-sm font-medium mt-1 text-gray-600"><span>R$ 6.500 / R$ 10.000</span><span>65%</span></div></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><h3 class="font-nunito font-bold text-xl text-[#34495E] mb-4">Pulse Log (Diário de Bordo)</h3><div class="space-y-4"><div class="flex items-start space-x-3"><div class="bg-green-500 w-3 h-3 rounded-full mt-1.5"></div><p class="text-sm text-gray-600">**15/07/2025:** Contrato assinado com a "Brinque Feliz Ltda" para o fornecimento dos novos brinquedos.</p></div><div class="flex items-start space-x-3"><div class="bg-green-500 w-3 h-3 rounded-full mt-1.5"></div><p class="text-sm text-gray-600">**10/07/2025:** Primeira parcela dos fundos (R$ 5.000) liberada da conta Escrow.</p></div><div class="flex items-start space-x-3"><div class="bg-green-500 w-3 h-3 rounded-full mt-1.5"></div><p class="text-sm text-gray-600">**01/07/2025:** Meta de financiamento atingida! Obrigado, comunidade!</p></div></div></div><div><h3 class="font-nunito font-bold text-xl text-[#34495E] mb-4">Transparência Financeira</h3><div class="bg-white p-4 rounded-xl shadow-sm space-y-3"><div class="flex justify-between items-center"><p>Doação Inicial (Rotary Club):</p><p class="font-bold text-green-600">R$ 5.000,00</p></div><div class="flex justify-between items-center"><p>Patrocínio (Mercadinho do Zé):</p><p class="font-bold text-green-600">R$ 500,00</p></div><div class="flex justify-between items-center"><p>Cashback Social da Comunidade:</p><p class="font-bold text-green-600">R$ 1.000,00</p></div><hr><div class="flex justify-between items-center font-bold text-lg"><p>Total Arrecadado:</p><p>R$ 6.500,00</p></div></div></div></div></main></div>`;
+        const supplierRegistrationHTML = `<div class="max-w-2xl mx-auto bg-white shadow-lg flex flex-col min-h-screen"><header class="p-4 flex justify-between items-center border-b border-gray-200 bg-white"><h1 class="text-2xl font-nunito font-bold text-[#34495E]">Seja um Fornecedor Parceiro</h1><button onclick="showPrototype(currentOriginator)" class="text-sm text-gray-600 font-semibold">Cancelar</button></header><main class="flex-1 p-6 bg-gray-50"><div class="text-center mb-6"><p class="text-gray-600">Junte-se à nossa rede de profissionais locais e tenha acesso a oportunidades de serviço para projetos que melhoram o nosso bairro.</p></div><div class="space-y-6"><div><label for="supplier-name-input" class="block text-sm font-medium text-gray-700">Nome da Empresa / Nome do Profissional</label><input type="text" id="supplier-name-input" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500" placeholder="Ex: João da Silva Marcenaria MEI"></div><div><label for="supplier-cnpj-input" class="block text-sm font-medium text-gray-700">CNPJ (obrigatório para emissão de nota fiscal)</label><input type="text" id="supplier-cnpj-input" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500" placeholder="00.000.000/0001-00"></div><div><label for="supplier-area-input" class="block text-sm font-medium text-gray-700">Área de Atuação Principal</label><select id="supplier-area-input" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500"><option>Construção e Reforma</option><option>Jardinagem e Paisagismo</option><option>Serviços Elétricos</option><option>Marcenaria</option><option>Gráfica e Comunicação Visual</option><option>Outro</option></select></div><button onclick="submitSupplierRegistration()" class="w-full bg-gradient-to-r from-[#3498DB] to-[#2ECC71] hover:opacity-90 text-white font-bold py-3 px-4 rounded-lg transition-opacity duration-300">Finalizar Cadastro</button></div></main></div>`;
+        
+        const moradorContent = {
+            home: `<div class="pulse-card rounded-2xl p-6 text-white shadow-lg mb-6" style="background: linear-gradient(135deg, #3498DB, #2ECC71);"><h2 id="pulseTitle" class="font-nunito font-bold text-2xl mb-2">Pulse do Bairro: Parquinho da Praça</h2><p class="text-sm opacity-90 mb-4">Juntos, vamos reformar o parquinho para as crianças. Cada compra sua ajuda a construir um sorriso!</p><div class="w-full bg-white/30 rounded-full h-4 mb-2"><div class="bg-[#2ECC71] h-4 rounded-full" style="width: 65%;"></div></div><div class="flex justify-between text-xs font-medium mb-4"><span>R$ 6.500 / R$ 10.000</span><span>65%</span></div><div class="flex space-x-2"><button onclick="getPulseIdeas()" class="w-1/2 bg-white/30 hover:bg-white/40 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">✨ Inspirar</button><button onclick="showPulseDetail('morador')" class="w-1/2 bg-white/30 hover:bg-white/40 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Ver Detalhes</button></div></div><div><h3 class="font-nunito font-bold text-xl text-[#34495E] mb-4">Compre e apoie no seu bairro</h3><div class="space-y-4"><div class="bg-white p-4 rounded-xl shadow-sm flex items-center space-x-4"><div class="w-16 h-16 bg-[#F1C40F]/20 rounded-lg flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#F1C40F]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg></div><div class="flex-grow"><p class="font-bold text-[#34495E]">Mercadinho do Zé</p><p class="text-sm text-gray-500">Mercearia</p></div><button onclick="getPostSuggestion('Mercadinho do Zé', '4%')" class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs font-bold py-1 px-2 rounded-full transition-colors duration-300">✨</button></div><div class="bg-white p-4 rounded-xl shadow-sm flex items-center space-x-4"><div class="w-16 h-16 bg-[#E74C3C]/20 rounded-lg flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#E74C3C]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0c-.454-.303-.977-.454-1.5-.454V5.454c.523 0 1.046-.151 1.5-.454a2.704 2.704 0 013 0 2.704 2.704 0 003 0 2.704 2.704 0 013 0 2.704 2.704 0 003 0c.454.303.977.454 1.5.454v10.092zM15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg></div><div class="flex-grow"><p class="font-bold text-[#34495E]">Padaria Doce Sonho</p><p class="text-sm text-gray-500">Padaria e Confeitaria</p></div><button onclick="getPostSuggestion('Padaria Doce Sonho', '5%')" class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs font-bold py-1 px-2 rounded-full transition-colors duration-300">✨</button></div></div></div>`,
+            map: `<div class="relative flex-grow"><svg class="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="#f3f4f6"/><defs><pattern id="grid-morador" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M 80 0 L 0 0 0 80" fill="none" stroke="#e5e7eb" stroke-width="2"/></pattern></defs><rect width="100%" height="100%" fill="url(#grid-morador)" /></svg><div class="absolute" style="top: 30%; left: 50%; transform: translateX(-50%);"><div class="relative flex flex-col items-center"><div class="bg-yellow-400 text-white p-2 rounded-lg text-sm font-bold shadow-lg mb-1">Parquinho</div><svg class="w-10 h-10 text-yellow-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg></div></div><div class="absolute" style="top: 55%; left: 25%; transform: translateX(-50%);"><div class="relative flex flex-col items-center"><div class="bg-white text-[#34495E] p-1 rounded-md text-xs font-semibold shadow-md mb-1">Mercadinho</div><svg class="w-8 h-8 text-[#3498DB]" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg></div></div><div class="absolute" style="top: 45%; left: 70%; transform: translateX(-50%);"><div class="relative flex flex-col items-center"><div class="bg-white text-[#34495E] p-1 rounded-md text-xs font-semibold shadow-md mb-1">Padaria</div><svg class="w-8 h-8 text-[#3498DB]" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg></div></div></div><div class="p-4 bg-white border-t"><h3 class="font-nunito font-bold text-lg text-[#34495E] mb-2">Legenda</h3><div class="flex items-center space-x-4"><div class="flex items-center space-x-2"><div class="w-4 h-4 rounded-full bg-yellow-400"></div><span class="text-sm text-gray-600">Pulso Ativo</span></div><div class="flex items-center space-x-2"><div class="w-4 h-4 rounded-full bg-[#3498DB]"></div><span class="text-sm text-gray-600">Comércio Parceiro</span></div></div></div>`,
+            plus_pulsos: `<div><div class="flex justify-between items-center mb-4"><h3 class="font-nunito font-bold text-xl text-[#34495E]">Decida o Futuro do Bairro</h3><button onclick="showProposePulseForm('morador')" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg flex items-center space-x-2 text-sm"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg><span>Proponha um Pulso</span></button></div><p class="text-sm text-gray-600 mb-6">O fundo comunitário, gerado pelo cashback das suas compras, está pronto para financiar o próximo projeto. Ajude a escolher qual será!</p><div id="vote-section" class="space-y-4"></div></div>`,
+            pulsos: `<div class="bg-gray-100 p-4 rounded-xl mb-6 text-center"><p class="text-gray-600">Através das suas compras, você já ajudou a gerar:</p><p class="font-nunito font-extrabold text-4xl text-[#2ECC71] my-2">R$ 47,85</p><p class="text-gray-600">para projetos no seu bairro. Parabéns!</p></div><div><h3 class="font-nunito font-bold text-xl text-[#34495E] mb-4">Seu Histórico de Impacto</h3><div class="space-y-4"><div class="bg-white p-4 rounded-xl shadow-sm"><div class="flex justify-between items-start"><div><p class="font-bold text-[#34495E]">Parquinho da Praça</p><p class="text-sm text-gray-500">Arrecadação para reforma dos brinquedos</p></div><span class="text-xs font-bold bg-blue-100 text-blue-800 py-1 px-2 rounded-full">Em Andamento</span></div><div class="mt-2 flex justify-between items-end"><div><p class="text-sm text-gray-600">Sua contribuição até agora:</p><p class="font-bold text-lg text-[#2ECC71]">R$ 28,50</p></div><button onclick="showPulseDetail('morador')" class="text-sm text-blue-600 font-semibold">Detalhes &rarr;</button></div></div><div class="bg-white p-4 rounded-xl shadow-sm opacity-70"><div class="flex justify-between items-start"><div><p class="font-bold text-[#34495E]">Iluminação da Rua das Flores</p><p class="text-sm text-gray-500">Instalação de 5 novos postes de LED</p></div><span class="text-xs font-bold bg-green-100 text-green-800 py-1 px-2 rounded-full">Concluído</span></div><div class="mt-2 flex justify-between items-end"><div><p class="text-sm text-gray-600">Sua contribuição total:</p><p class="font-bold text-lg text-gray-700">R$ 19,35</p></div><button onclick="showPulseDetail('morador')" class="text-sm text-blue-600 font-semibold">Detalhes &rarr;</button></div></div></div></div>`,
+            perfil: `<div class="flex flex-col items-center pt-6 pb-8"><img src="https://randomuser.me/api/portraits/women/68.jpg" class="rounded-full w-24 h-24 mb-4 border-4 border-white shadow-lg" alt="Avatar da Dona Maria"><h2 class="font-nunito font-bold text-2xl text-[#34495E]">Maria da Silva</h2><p class="text-sm text-gray-500">Membro desde Julho, 2025</p></div><div class="bg-white p-4 rounded-xl shadow-sm mb-6"><h3 class="font-nunito font-bold text-lg text-[#34495E] mb-4">Suas Conquistas</h3><div class="flex justify-around text-center"><div><svg class="w-10 h-10 text-yellow-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg><p class="text-xs mt-1 text-gray-600">Visionária Local</p></div><div><svg class="w-10 h-10 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01"/></svg><p class="text-xs mt-1 text-gray-600">Apoiadora Consistente</p></div><div><svg class="w-10 h-10 text-blue-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg><p class="text-xs mt-1 text-gray-600">Energia do Bairro</p></div></div></div><div class="space-y-2"><a href="#" class="bg-white p-4 rounded-xl shadow-sm flex justify-between items-center w-full text-left"><span class="font-semibold text-[#34495E]">Meus Dados</span><svg class="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg></a><a href="#" class="bg-white p-4 rounded-xl shadow-sm flex justify-between items-center w-full text-left"><span class="font-semibold text-[#34495E]">Notificações</span><svg class="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg></a><a href="#" class="bg-white p-4 rounded-xl shadow-sm flex justify-between items-center w-full text-left"><span class="font-semibold text-[#34495E]">Ajuda & Suporte</span><svg class="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg></a></div><div class="mt-8 text-center"><button class="text-red-500 font-semibold">Terminar Sessão</button></div>`
+        };
+
+        const comercianteContent = {
+            home: `<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6"><div class="bg-white p-6 rounded-xl shadow-sm"><p class="text-sm text-gray-500">Vendas (Últimos 30d)</p><p class="text-3xl font-bold text-[#34495E]">R$ 1.250,40</p></div><div class="bg-white p-6 rounded-xl shadow-sm"><p class="text-sm text-gray-500">Clientes GO Community</p><p class="text-3xl font-bold text-[#34495E]">32</p></div><div class="bg-white p-6 rounded-xl shadow-sm"><p class="text-sm text-gray-500">Cashback Gerado (Total)</p><p class="text-3xl font-bold text-[#2ECC71]">R$ 215,75</p></div><div class="bg-white p-6 rounded-xl shadow-sm"><p class="text-sm text-gray-500">Ticket Médio (GO)</p><p class="text-3xl font-bold text-[#34495E]">R$ 39,07</p></div></div><div class="bg-white p-6 rounded-xl shadow-sm mb-6"><div class="flex justify-between items-center mb-4"><h3 class="font-nunito font-bold text-xl text-[#34495E]">Sua Contribuição para o Bairro</h3><button onclick="showPulseDetail('comerciante')" class="text-sm text-blue-600 font-semibold">Ver Detalhes &rarr;</button></div><div class="flex items-center space-x-6"><div class="w-1/3"><p class="text-lg font-bold text-[#3498DB]">Pulse: Parquinho da Praça</p><p class="text-sm text-gray-600">Seu mercadinho já contribuiu com</p><p class="text-4xl font-extrabold text-[#2ECC71] my-2">R$ 50,02</p><p class="text-xs text-gray-500">para a reforma. Obrigado!</p></div><div class="w-2/3"><p class="text-sm text-gray-600 mb-2">Progresso Total do Pulse:</p><div class="w-full bg-gray-200 rounded-full h-4"><div class="bg-gradient-to-r from-[#3498DB] to-[#2ECC71] h-4 rounded-full" style="width: 65%;"></div></div><div class="flex justify-between text-xs font-medium mt-1 text-gray-500"><span>R$ 6.500 / R$ 10.000</span><span>65%</span></div></div></div></div><div class="bg-white p-6 rounded-xl shadow-sm"><h3 class="font-nunito font-bold text-xl text-[#34495E] mb-4">Atividade Recente</h3><div class="space-y-3"><div class="flex justify-between items-center p-2 rounded-lg hover:bg-gray-50"><p>Maria S. comprou R$ 55,20</p><span class="font-bold text-green-600">+ R$ 2,21</span></div><div class="flex justify-between items-center p-2 rounded-lg hover:bg-gray-50"><p>Carlos P. comprou R$ 21,80</p><span class="font-bold text-green-600">+ R$ 0,87</span></div><div class="flex justify-between items-center p-2 rounded-lg hover:bg-gray-50"><p>Ana L. comprou R$ 78,50</p><span class="font-bold text-green-600">+ R$ 3,14</span></div></div></div>`,
+            clientes: `<div class="bg-white p-6 rounded-xl shadow-sm"><div class="flex justify-between items-center mb-4"><h3 class="font-nunito font-bold text-xl text-[#34495E]">Seus Clientes GO Community</h3><button onclick="analyzeCustomers()" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-2 px-4 rounded-lg flex items-center space-x-2"><span>✨ Analisar Clientes</span></button></div><p class="text-sm text-gray-600 mb-4">Uma visão geral dos vizinhos que apoiam seu negócio. Use a nossa IA para obter ideias de como fidelizá-los.</p><table class="w-full text-left" id="customer-table"><thead><tr class="border-b"><th class="p-2">Nome</th><th class="p-2">Última Compra</th><th class="p-2">Total Gasto</th></tr></thead><tbody><tr class="border-b hover:bg-gray-50"><td class="p-2">Maria da Silva</td><td class="p-2">Hoje</td><td class="p-2">R$ 245,60</td></tr><tr class="border-b hover:bg-gray-50"><td class="p-2">Carlos Pereira</td><td class="p-2">Ontem</td><td class="p-2">R$ 112,90</td></tr><tr class="border-b hover:bg-gray-50"><td class="p-2">Ana Lima</td><td class="p-2">Há 3 dias</td><td class="p-2">R$ 310,00</td></tr><tr class="border-b hover:bg-gray-50"><td class="p-2">Pedro Costa</td><td class="p-2">Há 3 dias</td><td class="p-2">R$ 45,20</td></tr><tr class="border-b hover:bg-gray-50"><td class="p-2">Sofia Alves</td><td class="p-2">Há 1 semana</td><td class="p-2">R$ 180,50</td></tr></tbody></table></div>`,
+            pulsos: `<div><div class="flex justify-between items-center mb-4"><h3 class="font-nunito font-bold text-xl text-[#34495E]">Marketplace de Impacto Local</h3><div class="flex space-x-2"><button onclick="showSupplierRegistrationForm('comerciante')" class="text-sm text-blue-600 font-semibold">É fornecedor? Cadastre-se</button><button onclick="showProposePulseForm('comerciante')" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg flex items-center space-x-2 text-sm"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg><span>Proponha um Pulso</span></button></div></div><p class="text-sm text-gray-600 mb-6">Veja as oportunidades de serviço para projetos no seu bairro e envie sua proposta.</p><div class="space-y-4"><div class="bg-white p-4 rounded-xl shadow-sm"><div class="flex justify-between items-start"><p class="font-bold text-[#34495E]">Instalar 3 novos bancos na praça</p><span class="text-xs font-bold bg-gray-200 text-gray-800 py-1 px-2 rounded-full">Bairro Centro</span></div><div class="w-full bg-gray-200 rounded-full h-2.5 mt-3"><div class="bg-[#2ECC71] h-2.5 rounded-full" style="width: 100%"></div></div><div class="flex justify-between items-end mt-2"><div><p class="text-xs text-gray-500 mt-1">Orçamento: R$ 2.000,00</p></div><button onclick="handleDirectDonation('Instalar 3 novos bancos na praça')" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg text-sm transition-colors">Enviar Proposta</button></div></div><div class="bg-white p-4 rounded-xl shadow-sm"><div class="flex justify-between items-start"><p class="font-bold text-[#34495E]">Plantar 10 árvores na Rua das Flores</p><span class="text-xs font-bold bg-gray-200 text-gray-800 py-1 px-2 rounded-full">Bairro Jardim Itália</span></div><div class="w-full bg-gray-200 rounded-full h-2.5 mt-3"><div class="bg-[#2ECC71] h-2.5 rounded-full" style="width: 100%"></div></div><div class="flex justify-between items-end mt-2"><div><p class="text-xs text-gray-500 mt-1">Orçamento: R$ 1.500,00</p></div><button onclick="handleDirectDonation('Plantar 10 árvores na Rua das Flores')" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg text-sm transition-colors">Enviar Proposta</button></div></div></div></div>`,
+            campanhas: `<div class="bg-white p-6 rounded-xl shadow-sm"><h3 class="font-nunito font-bold text-xl text-[#34495E] mb-2">Suas Campanhas</h3><p class="text-sm text-gray-600 mb-6">Ajuste sua estratégia de cashback e use nossa IA para ajudar a divulgar seu negócio.</p><div class="mb-6"><label for="cashback" class="block text-sm font-medium text-gray-700">Percentual de Cashback Social Ativo</label><input type="range" id="cashback" name="cashback" min="1" max="10" value="4" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer" oninput="this.nextElementSibling.nextElementSibling.textContent = this.value + '%'"><div class="flex justify-between text-xs text-gray-500 mt-1"><span>1%</span><span>10%</span></div><p class="text-center font-bold text-2xl text-[#2ECC71] mt-2">4%</p></div><div><h4 class="font-nunito font-bold text-lg text-[#34495E] mb-2">Marketing Inteligente</h4><p class="text-sm text-gray-600 mb-4">Clique no botão abaixo para que nossa IA crie um post pronto para você copiar e colar nas suas redes sociais, divulgando sua participação no Pulso do bairro!</p><button onclick="createPost()" class="w-full bg-gradient-to-r from-[#3498DB] to-[#2ECC71] hover:opacity-90 text-white font-bold py-3 px-4 rounded-lg transition-opacity duration-300 flex items-center justify-center space-x-2"><span>✨ Criar Post de Divulgação</span></button></div></div>`,
+            perfil: `<div class="bg-white p-6 rounded-xl shadow-sm"><h3 class="font-nunito font-bold text-xl text-[#34495E] mb-4">Perfil da Loja</h3><p class="text-sm text-gray-600 mb-4">Mantenha seus dados atualizados.</p><div class="space-y-4"><div><label class="block text-sm font-medium">Nome da Loja</label><input type="text" value="Mercadinho do Zé" class="w-full p-2 border rounded-md"></div><div><label class="block text-sm font-medium">Endereço</label><input type="text" value="Rua da Praça, 123" class="w-full p-2 border rounded-md"></div><div><label class="block text-sm font-medium">Categoria</label><input type="text" value="Mercearia" class="w-full p-2 border rounded-md"></div><button class="bg-[#34495E] text-white font-bold py-2 px-4 rounded-lg">Salvar Alterações</button></div></div>`
+        };
+
+        const doadorContent = {
+            projetos: `<div class="bg-white p-6 rounded-xl shadow-sm"><div class="flex justify-between items-center mb-4"><h3 class="font-nunito font-bold text-xl text-[#34495E]">Projetos Financiados pelo Rotary Club</h3></div><p class="text-sm text-gray-600 mb-6">Acompanhe em tempo real o progresso e a prestação de contas dos projetos que a sua organização apoia.</p><div class="space-y-6"><div class="border p-4 rounded-lg"><div class="flex justify-between items-center"><h4 class="text-lg font-bold text-[#3498DB]">Pulse: Parquinho da Praça</h4><span class="text-xs font-bold bg-blue-100 text-blue-800 py-1 px-2 rounded-full">Em Andamento</span></div><div class="w-full bg-gray-200 rounded-full h-4 my-3"><div class="bg-gradient-to-r from-[#3498DB] to-[#2ECC71] h-4 rounded-full" style="width: 65%;"></div></div><div class="flex justify-between items-center text-sm"><div><p class="text-gray-500">Arrecadação Total</p><p class="font-bold">R$ 6.500 / R$ 10.000</p></div><div><p class="text-gray-500">Sua Contribuição</p><p class="font-bold">R$ 5.000 (50%)</p></div><div class="flex space-x-2"><button onclick="showPulseDetail('doador')" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg flex items-center space-x-2 text-xs">Detalhes</button><button id="generate-report-btn" class="bg-yellow-400 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded-lg flex items-center space-x-2 text-xs"><span>✨ Gerar Relatório</span></button></div></div></div></div></div>`,
+            explorar: `<div><div class="flex justify-between items-center mb-4"><h3 class="font-nunito font-bold text-xl text-[#34495E]">Marketplace de Impacto Local</h3><div class="flex space-x-2"><button onclick="showSupplierRegistrationForm('doador')" class="text-sm text-blue-600 font-semibold">É fornecedor? Cadastre-se</button><button onclick="showProposePulseForm('doador')" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg flex items-center space-x-2 text-sm"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg><span>Proponha um Pulso</span></button></div></div><p class="text-sm text-gray-600 mb-6">Veja as oportunidades de serviço para projetos no seu bairro e envie sua proposta.</p><div class="space-y-4"><div class="bg-white p-4 rounded-xl shadow-sm"><div class="flex justify-between items-start"><p class="font-bold text-[#34495E]">Instalar 3 novos bancos na praça</p><span class="text-xs font-bold bg-gray-200 text-gray-800 py-1 px-2 rounded-full">Bairro Centro</span></div><div class="w-full bg-gray-200 rounded-full h-2.5 mt-3"><div class="bg-[#2ECC71] h-2.5 rounded-full" style="width: 100%"></div></div><div class="flex justify-between items-end mt-2"><div><p class="text-xs text-gray-500 mt-1">Orçamento: R$ 2.000,00</p></div><button onclick="handleDirectDonation('Instalar 3 novos bancos na praça')" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg text-sm transition-colors">Enviar Proposta</button></div></div><div class="bg-white p-4 rounded-xl shadow-sm"><div class="flex justify-between items-start"><p class="font-bold text-[#34495E]">Plantar 10 árvores na Rua das Flores</p><span class="text-xs font-bold bg-gray-200 text-gray-800 py-1 px-2 rounded-full">Bairro Jardim Itália</span></div><div class="w-full bg-gray-200 rounded-full h-2.5 mt-3"><div class="bg-[#2ECC71] h-2.5 rounded-full" style="width: 100%"></div></div><div class="flex justify-between items-end mt-2"><div><p class="text-xs text-gray-500 mt-1">Orçamento: R$ 1.500,00</p></div><button onclick="handleDirectDonation('Plantar 10 árvores na Rua das Flores')" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg text-sm transition-colors">Enviar Proposta</button></div></div></div></div>`,
+            financeiro: `<div class="bg-white p-6 rounded-xl shadow-sm"><h3 class="font-nunito font-bold text-xl text-[#34495E] mb-4">Extrato de Doações</h3><p class="text-sm text-gray-600 mb-4">Visualize todas as transações e o fluxo de caixa dos seus investimentos sociais.</p><table class="w-full text-left"><thead><tr class="border-b"><th class="p-2">Data</th><th class="p-2">Descrição</th><th class="p-2">Projeto</th><th class="p-2">Valor</th></tr></thead><tbody><tr class="border-b hover:bg-gray-50"><td class="p-2">15/07/2025</td><td class="p-2">Aporte inicial</td><td class="p-2">Parquinho da Praça</td><td class="p-2 font-bold text-red-600">- R$ 5.000,00</td></tr></tbody></table></div>`
+        };
+        
+        const gestorContent = {
+            observatorio: `<div class="flex justify-between items-center mb-6"><h3 class="font-nunito font-bold text-2xl text-[#34495E]">Observatório Economico e Cívico - Bairro Centro</h3><button onclick="generateExecutiveSummary()" class="bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded-lg flex items-center space-x-2"><span>✨ Gerar Análise Estratégica</span></button></div><div class="grid grid-cols-1 lg:grid-cols-3 gap-6"><div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-sm"><div class="flex justify-between items-center mb-4"><h4 class="font-bold text-lg">Análise de ROI: Impacto do "Pulse do Parquinho"</h4><button onclick="showPulseDetail('gestor')" class="text-sm text-blue-600 font-semibold">Ver Detalhes &rarr;</button></div><p class="text-sm text-gray-600 mb-4">Correlação entre o investimento cívico na reforma do parquinho e o aumento do volume de transações (GMV) no comércio local circundante.</p><div class="w-full bg-gray-50 p-4 rounded-lg"><svg viewBox="0 0 400 200" class="w-full h-auto"><rect width="400" height="200" fill="#f9fafb"/><line x1="40" y1="180" x2="380" y2="180" stroke="#d1d5db" /><line x1="40" y1="20" x2="40" y2="180" stroke="#d1d5db" /><text x="20" y="25" font-size="10" fill="#6b7280">GMV</text><text x="180" y="195" font-size="10" fill="#6b7280">Tempo</text><polyline points="50,150 150,140 200,100 250,80 350,50" fill="none" stroke="#2ECC71" stroke-width="2"/><line x1="225" y1="20" x2="225" y2="180" stroke="#3498DB" stroke-width="1" stroke-dasharray="4"/><text x="230" y="30" font-size="10" fill="#3498DB">Início do Pulse</text></svg></div></div><div class="space-y-6"><div class="bg-white p-6 rounded-xl shadow-sm"><p class="text-sm text-gray-500">GMV (Pós-Pulse)</p><p class="text-3xl font-bold text-green-600">+15%</p></div><div class="bg-white p-6 rounded-xl shadow-sm"><p class="text-sm text-gray-500">Engajamento Cívico</p><p class="text-3xl font-bold text-blue-600">250+ Moradores</p></div><div class="bg-white p-6 rounded-xl shadow-sm"><p class="text-sm text-gray-500">Comércios Ativos</p><p class="text-3xl font-bold text-[#34495E]">15 Lojas</p></div></div></div>`,
+            planejamento: `<div class="bg-white p-6 rounded-xl shadow-sm"><h3 class="font-nunito font-bold text-xl text-[#34495E] mb-4">Mapa de Calor Cívico</h3><p class="text-sm text-gray-600 mb-4">Visualize as necessidades e prioridades da comunidade com base nas propostas e votações dos "Pulses". Áreas mais quentes indicam maior demanda por intervenções.</p><div class="w-full bg-gray-50 p-4 rounded-lg"><svg viewBox="0 0 400 250" class="w-full h-auto"><rect width="400" height="250" fill="#f3f4f6"/><rect x="50" y="50" width="100" height="80" fill="#F1C40F" opacity="0.4"/><rect x="150" y="50" width="80" height="120" fill="#F1C40F" opacity="0.8"/><rect x="230" y="90" width="120" height="60" fill="#F1C40F" opacity="0.6"/><rect x="80" y="130" width="150" height="70" fill="#F1C40F" opacity="0.9"/><text x="155" y="135" font-size="12" fill="#a16207" font-weight="bold">Centro</text></svg></div></div>`
+        };
+        
+        // --- LÓGICA DE NAVEGAÇÃO GERAL ---
+        let landingPageScreen, menuScreen, moradorPrototype, comerciantePrototype, doadorPrototype, gestorPrototype, proposePulseScreen, pulseDetailScreen, supplierRegistrationScreen;
+        let currentOriginator = 'landing-page';
+
+        function showPrototype(prototypeName) {
+            landingPageScreen.style.display = 'none';
+            menuScreen.style.display = 'none';
+            moradorPrototype.style.display = 'none';
+            comerciantePrototype.style.display = 'none';
+            doadorPrototype.style.display = 'none';
+            gestorPrototype.style.display = 'none';
+            proposePulseScreen.style.display = 'none';
+            pulseDetailScreen.style.display = 'none';
+            supplierRegistrationScreen.style.display = 'none';
+
+            if (prototypeName === 'menu') menuScreen.style.display = 'flex';
+            else if (prototypeName === 'landing-page') landingPageScreen.style.display = 'block';
+            else if (prototypeName === 'morador') moradorPrototype.style.display = 'block';
+            else if (prototypeName === 'comerciante') comerciantePrototype.style.display = 'block';
+            else if (prototypeName === 'doador') doadorPrototype.style.display = 'block';
+            else if (prototypeName === 'gestor') gestorPrototype.style.display = 'block';
+        }
+
+        function showProposePulseForm(originator) {
+            currentOriginator = originator;
+            showPrototype(null); // Hide all main prototypes
+            proposePulseScreen.style.display = 'block';
+        }
+        
+        function showPulseDetail(originator) {
+            currentOriginator = originator;
+            showPrototype(null); // Hide all main prototypes
+            pulseDetailScreen.style.display = 'block';
+        }
+
+        function showSupplierRegistrationForm(originator) {
+            currentOriginator = originator;
+            showPrototype(null);
+            supplierRegistrationScreen.style.display = 'block';
+        }
+
+        // --- LÓGICA DO PROTÓTIPO DO MORADOR ---
+        function setupMoradorNav() {
+            const screens = { home: document.getElementById('home-screen-morador'), map: document.getElementById('map-screen-morador'), plus_pulsos: document.getElementById('plus-pulsos-screen-morador'), pulsos: document.getElementById('pulsos-screen-morador'), perfil: document.getElementById('perfil-screen-morador') };
+            const navLinks = { home: document.getElementById('nav-home-morador'), map: document.getElementById('nav-map-morador'), plus_pulsos: document.getElementById('nav-plus-pulsos-morador'), pulsos: document.getElementById('nav-pulsos-morador'), perfil: document.getElementById('nav-perfil-morador') };
+            
+            Object.keys(navLinks).forEach(key => {
+                if (navLinks[key]) {
+                    navLinks[key].addEventListener('click', (e) => {
+                        e.preventDefault();
+                        Object.values(screens).forEach(s => s.classList.add('hidden'));
+                        screens[key].classList.remove('hidden');
+                        if(key === 'map') screens[key].classList.add('flex');
+                        Object.values(navLinks).forEach(n => n.classList.remove('nav-active'));
+                        navLinks[key].classList.add('nav-active');
+                    });
+                }
+            });
+
+            screens.home.innerHTML = moradorContent.home;
+            screens.map.innerHTML = moradorContent.map;
+            screens.plus_pulsos.innerHTML = moradorContent.plus_pulsos;
+            screens.pulsos.innerHTML = moradorContent.pulsos;
+            screens.perfil.innerHTML = moradorContent.perfil;
+
+            renderVoteProposals();
+        }
+
+        // --- LÓGICA DO PROTÓTIPO DO COMERCIANTE ---
+        function setupComercianteNav() {
+            const screens = { home: document.getElementById('home-screen-comerciante'), clientes: document.getElementById('clientes-screen-comerciante'), pulsos: document.getElementById('pulsos-screen-comerciante'), campanhas: document.getElementById('campanhas-screen-comerciante'), perfil: document.getElementById('perfil-screen-comerciante') };
+            const navLinks = { home: document.getElementById('nav-home-comerciante'), clientes: document.getElementById('nav-clientes-comerciante'), pulsos: document.getElementById('nav-pulsos-comerciante'), campanhas: document.getElementById('nav-campanhas-comerciante'), perfil: document.getElementById('nav-perfil-comerciante') };
+            
+            Object.keys(navLinks).forEach(key => {
+                if (navLinks[key]) {
+                    navLinks[key].addEventListener('click', (e) => {
+                        e.preventDefault();
+                        Object.values(screens).forEach(s => s.classList.add('hidden'));
+                        screens[key].classList.remove('hidden');
+                        Object.values(navLinks).forEach(n => n.classList.remove('merchant-nav-active'));
+                        navLinks[key].classList.add('merchant-nav-active');
+                    });
+                }
+            });
+
+            screens.home.innerHTML = comercianteContent.home;
+            screens.clientes.innerHTML = comercianteContent.clientes;
+            screens.pulsos.innerHTML = comercianteContent.pulsos;
+            screens.campanhas.innerHTML = comercianteContent.campanhas;
+            screens.perfil.innerHTML = comercianteContent.perfil;
+        }
+        
+        // --- LÓGICA DO PROTÓTIPO DO DOADOR ---
+        function setupDoadorNav() {
+            const screens = { projetos: document.getElementById('projetos-screen-doador'), explorar: document.getElementById('explorar-screen-doador'), financeiro: document.getElementById('financeiro-screen-doador') };
+            const navLinks = { projetos: document.getElementById('nav-projetos-doador'), explorar: document.getElementById('nav-explorar-doador'), financeiro: document.getElementById('nav-financeiro-doador') };
+            
+            Object.keys(navLinks).forEach(key => {
+                if (navLinks[key]) {
+                    navLinks[key].addEventListener('click', (e) => {
+                        e.preventDefault();
+                        Object.values(screens).forEach(s => s.classList.add('hidden'));
+                        screens[key].classList.remove('hidden');
+                        Object.values(navLinks).forEach(n => n.classList.remove('donor-nav-active'));
+                        navLinks[key].classList.add('donor-nav-active');
+                    });
+                }
+            });
+
+            screens.projetos.innerHTML = doadorContent.projetos;
+            screens.explorar.innerHTML = doadorContent.explorar;
+            screens.financeiro.innerHTML = doadorContent.financeiro;
+            
+            const reportBtn = document.getElementById('generate-report-btn');
+            if(reportBtn) {
+                reportBtn.addEventListener('click', generateReport);
+            }
+        }
+
+        // --- LÓGICA DO PROTÓTIPO DO GESTOR PÚBLICO ---
+        function setupGestorNav() {
+            const screens = { observatorio: document.getElementById('observatorio-screen-gestor'), planejamento: document.getElementById('planejamento-screen-gestor') };
+            const navLinks = { observatorio: document.getElementById('nav-observatorio-gestor'), planejamento: document.getElementById('nav-planejamento-gestor') };
+            
+            Object.keys(navLinks).forEach(key => {
+                if (navLinks[key]) {
+                    navLinks[key].addEventListener('click', (e) => {
+                        e.preventDefault();
+                        Object.values(screens).forEach(s => s.classList.add('hidden'));
+                        screens[key].classList.remove('hidden');
+                        Object.values(navLinks).forEach(n => n.classList.remove('gov-nav-active'));
+                        navLinks[key].classList.add('gov-nav-active');
+                    });
+                }
+            });
+
+            screens.observatorio.innerHTML = gestorContent.observatorio;
+            screens.planejamento.innerHTML = gestorContent.planejamento;
+        }
+
+        // --- LÓGICA COMPARTILHADA (MODAL & GEMINI API) ---
+        const geminiModal = document.getElementById('geminiModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const loadingSpinner = document.getElementById('loadingSpinner');
+        const modalContent = document.getElementById('modalContent');
+        const copyButton = document.getElementById('copyButton');
+
+        function showModal() {
+            geminiModal.classList.remove('opacity-0', 'pointer-events-none');
+            geminiModal.querySelector('.modal-content').classList.remove('scale-95');
+        }
+
+        function closeModal() {
+            geminiModal.classList.add('opacity-0', 'pointer-events-none');
+            geminiModal.querySelector('.modal-content').classList.add('scale-95');
+        }
+
+        function showLoading(state) {
+            loadingSpinner.style.display = state ? 'flex' : 'none';
+            modalContent.style.display = state ? 'none' : 'block';
+            copyButton.style.display = state ? 'none' : 'inline-block';
+        }
+
+        async function callGemini(prompt) {
+             let chatHistory = [];
+             chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+             const payload = { contents: chatHistory };
+             const apiKey = "";
+             const apiUrl = `/.netlify/functions/gemini-proxy`;
+             try {
+                 const response = await fetch(apiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+                 if (!response.ok) throw new Error(`API error: ${response.statusText}`);
+                 const result = await response.json();
+                 if (result.text) {
+                   return result.text;
+                 } else { return "Não foi possível gerar uma resposta. Tente novamente."; }
+             } catch (error) {
+                 console.error("Error calling Gemini API:", error);
+                 return "Ocorreu um erro ao comunicar com a IA. Verifique a sua ligação à Internet ou tente mais tarde.";
+             }
+        }
+
+        function copyToClipboard() {
+            const textToCopy = modalContent.textContent;
+            const textArea = document.createElement("textarea");
+            textArea.value = textToCopy;
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                copyButton.textContent = 'Copiado!';
+                setTimeout(() => { copyButton.textContent = 'Copiar Texto'; }, 2000);
+            } catch (err) { console.error('Falha ao copiar texto: ', err); }
+            document.body.removeChild(textArea);
+        }
+
+        async function getPulseIdeas() {
+            modalTitle.textContent = '✨ Ideias para o Bairro'; showModal(); showLoading(true);
+            const prompt = `Aja como um líder comunitário criativo. O projeto do nosso bairro é "Pulse do Bairro: Parquinho da Praça". Gere 3 ideias simples e de baixo custo para que os moradores possam acelerar a arrecadação de fundos e o engajamento, para além de apenas comprar no comércio local. Formate como uma lista com títulos em negrito.`;
+            const ideas = await callGemini(prompt); modalContent.innerHTML = ideas.replace(/\n/g, '<br>'); showLoading(false);
+        }
+        async function getPostSuggestion(merchantName, cashback) {
+            modalTitle.textContent = '✨ Sugestão de Post'; showModal(); showLoading(true);
+            const prompt = `Aja como um especialista em redes sociais para pequenos negócios. Crie um post curto e amigável para o Instagram do comerciante "${merchantName}". O post deve divulgar que ele está a participar no projeto "Pulse do Bairro: Parquinho da Praça" e que oferece ${cashback} de cashback social para ajudar. Use emojis e um tom positivo e convidativo. Inclua 2-3 hashtags relevantes.`;
+            const suggestion = await callGemini(prompt); modalContent.innerHTML = suggestion.replace(/\n/g, '<br>'); showLoading(false);
+        }
+        async function createPost() {
+            modalTitle.textContent = '✨ Sugestão de Post para Redes Sociais'; showModal(); showLoading(true);
+            const cashbackValue = document.getElementById('cashback')?.value || '4';
+            const prompt = `Aja como um especialista em redes sociais para pequenos negócios. Crie um post curto e amigável para o Instagram/WhatsApp do "Mercadinho do Zé". O post deve divulgar que o mercadinho está participando do projeto "Pulse: Parquinho da Praça" e que oferece ${cashbackValue}% de cashback social para ajudar a comunidade. Use emojis, um tom positivo e convidativo, e inclua 2-3 hashtags relevantes para Chapecó e comércio local.`;
+            const suggestion = await callGemini(prompt); modalContent.textContent = suggestion; showLoading(false);
+        }
+        async function analyzeCustomers() {
+            modalTitle.textContent = '✨ Análise de Clientes'; showModal(); showLoading(true);
+            const table = document.getElementById('customer-table'); let customerData = "Nome, Última Compra, Total Gasto\n";
+            if (table) { for (let i = 1; i < table.rows.length; i++) { const row = table.rows[i]; customerData += `${row.cells[0].innerText}, ${row.cells[1].innerText}, ${row.cells[2].innerText}\n`; } }
+            const prompt = `Aja como um consultor de negócios para o "Mercadinho do Zé", um pequeno comércio de bairro. Analise os seguintes dados de clientes que participam de um programa de fidelidade local chamado GO Community:\n\n${customerData}\n\nCom base nestes dados, forneça:\n1.  **Resumo Rápido:** Um parágrafo curto sobre o perfil geral dos clientes.\n2.  **Top 3 Clientes:** Identifique os 3 principais clientes (por valor gasto) e sugira uma forma simples e pessoal de agradecê-los na próxima visita.\n3.  **Ação Sugerida:** Sugira uma promoção ou ação de marketing simples para reativar clientes que não compram há mais tempo ou para aumentar o ticket médio geral.\n\nFormate a resposta de forma clara e direta.`;
+            const analysis = await callGemini(prompt); modalContent.textContent = analysis; showLoading(false);
+        }
+        async function generateReport() {
+            modalTitle.textContent = '✨ Relatório de Impacto'; showModal(); showLoading(true);
+            const prompt = `Aja como um diretor de comunicação do Rotary Club. Crie um relatório de progresso conciso e profissional sobre o projeto "Pulse: Parquinho da Praça".\n\nDados do projeto:\n- Meta: R$ 10.000\n- Arrecadado: R$ 6.500 (65%)\n- Contribuição do Rotary: R$ 5.000\n- Objetivo: Reformar os brinquedos do parquinho para as crianças da comunidade.\n\nO relatório deve ter:\n1. Um título claro.\n2. Um parágrafo de introdução sobre a importância do projeto.\n3. Um resumo do progresso financeiro, destacando a parceria com a comunidade através da GO Community.\n4. Um parágrafo final otimista, incentivando a contínua participação da comunidade.\n\nO tom deve ser formal, mas inspirador.`;
+            const report = await callGemini(prompt); modalContent.textContent = report; showLoading(false);
+        }
+        async function generateExecutiveSummary() {
+            modalTitle.textContent = '✨ Análise Estratégica para Gestores'; showModal(); showLoading(true);
+            const prompt = `Aja como um consultor de políticas públicas para a Prefeitura de Chapecó. Com base nos seguintes dados do projeto piloto "GO Community" no Bairro Centro, escreva um sumário executivo conciso (3 parágrafos) para o Prefeito.\n\nDados:\n- Ação: Reforma do parquinho da praça, financiada por uma parceria entre Rotary Club e a comunidade.\n- Resultado Económico: Aumento de 15% no volume de vendas (GMV) do comércio local no entorno da praça nos 30 dias após a conclusão do projeto.\n- Resultado Cívico: Engajamento de mais de 250 moradores e 15 comerciantes locais na plataforma.\n\nO sumário deve:\n1.  Destacar o sucesso da parceria público-privada-comunidade.\n2.  Enfatizar a correlação positiva entre o investimento em espaços públicos e o fortalecimento da economia local.\n3.  Recomendar a expansão do modelo "GO Community" como uma ferramenta estratégica para o desenvolvimento económico e o engajamento cívico em outros bairros da cidade.`;
+            const summary = await callGemini(prompt); modalContent.textContent = summary; showLoading(false);
+        }
+        
+        // --- VOTE LOGIC ---
+        const voteProposals = [
+            { id: 1, title: "Instalar 3 novos bancos na praça", votes: 35, goal: 200 },
+            { id: 2, title: "Comprar 2 armários para a escola pública do bairro", votes: 195, goal: 200 },
+            { id: 3, title: "Organizar uma feira de artesanato local", votes: 135, goal: 200 }
+        ];
+        let hasVoted = false;
+
+        function handleVote(proposalId) {
+            if (hasVoted) return;
+            hasVoted = true;
+
+            const selectedProposal = voteProposals.find(p => p.id === proposalId);
+            if (selectedProposal) {
+                selectedProposal.votes++;
+            }
+            renderVoteProposals(); // Re-render to update UI
+        }
+        
+        function handleDirectDonation(pulseTitle) {
+            modalTitle.textContent = 'Apoiar este Pulso';
+            modalContent.innerHTML = `<p class="text-center">Obrigado por apoiar o projeto:<br><strong class="font-bold text-lg">${pulseTitle}</strong></p><p class="text-center text-sm mt-4">Esta é uma demonstração. Numa versão real, aqui estaria o fluxo de doação.</p>`;
+            copyButton.style.display = 'none';
+            showModal();
+            showLoading(false);
+        }
+
+        function renderVoteProposals() {
+            const voteSection = document.getElementById('vote-section');
+            if (!voteSection) return;
+
+            voteSection.innerHTML = ''; // Clear previous content
+
+            voteProposals.forEach(proposal => {
+                const percentage = Math.round((proposal.votes / proposal.goal) * 100);
+                const proposalHTML = `
+                    <div class="bg-white p-4 rounded-xl shadow-sm">
+                        <div class="flex justify-between items-center">
+                            <p class="font-bold text-[#34495E]">${proposal.title}</p>
+                            <button onclick="handleVote(${proposal.id})" class="vote-button ${hasVoted ? 'voted' : 'bg-gray-200 hover:bg-gray-300'} text-gray-700 font-bold py-2 px-4 rounded-lg text-sm transition-colors">
+                                ${hasVoted ? 'Votado' : 'Apoiar'}
+                            </button>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5 mt-3">
+                            <div class="bg-[#2ECC71] h-2.5 rounded-full" style="width: ${percentage}%"></div>
+                        </div>
+                        <p class="text-xs text-right text-gray-500 mt-1">${proposal.votes} / ${proposal.goal} apoios</p>
+                    </div>
+                `;
+                voteSection.innerHTML += proposalHTML;
+            });
+
+            if (hasVoted) {
+                document.querySelectorAll('#vote-section .vote-button').forEach(button => {
+                    button.classList.add('voted');
+                    button.disabled = true;
+                });
+            }
+        }
+        
+        async function helpDescribePulse() {
+            const titleInput = document.getElementById('pulse-title-input');
+            const descriptionInput = document.getElementById('pulse-description-input');
+            if (!titleInput.value) {
+                alert('Por favor, preencha o título da ideia primeiro.');
+                return;
+            }
+            
+            modalTitle.textContent = '✨ Assistente de Proposta';
+            showModal();
+            showLoading(true);
+
+            const prompt = `Aja como um especialista em desenvolvimento comunitário. Crie uma descrição inspiradora e bem estruturada para uma proposta de projeto com o título: "${titleInput.value}". A descrição deve explicar a importância do projeto para o bairro e os benefícios esperados. Use um tom positivo e colaborativo.`;
+            
+            const description = await callGemini(prompt);
+            descriptionInput.value = description;
+            closeModal();
+        }
+
+        function submitPulseProposal() {
+            const title = document.getElementById('pulse-title-input').value;
+            if (!title) {
+                alert('O título da proposta é obrigatório.');
+                return;
+            }
+            modalTitle.textContent = 'Proposta Enviada!';
+            modalContent.innerHTML = `<p class="text-center">Obrigado! A sua proposta <strong class="font-bold">"${title}"</strong> foi enviada para análise da comunidade.</p>`;
+            copyButton.style.display = 'none';
+            showModal();
+            showLoading(false);
+            setTimeout(() => {
+                closeModal();
+                showPrototype(currentOriginator);
+            }, 3000);
+        }
+        
+        function submitSupplierRegistration() {
+            const name = document.getElementById('supplier-name-input').value;
+            const cnpj = document.getElementById('supplier-cnpj-input').value;
+            if (!name || !cnpj) {
+                alert('Nome e CNPJ são obrigatórios.');
+                return;
+            }
+            modalTitle.textContent = 'Cadastro Recebido!';
+            modalContent.innerHTML = `<p class="text-center">Obrigado, ${name}! Recebemos seu cadastro e entraremos em contato em breve para finalizar a verificação.</p>`;
+            copyButton.style.display = 'none';
+            showModal();
+            showLoading(false);
+            setTimeout(() => {
+                closeModal();
+                showPrototype(currentOriginator);
+            }, 3000);
+        }
+
+        // --- INICIALIZAÇÃO ---
+        document.addEventListener('DOMContentLoaded', () => {
+            landingPageScreen = document.getElementById('landing-page-screen');
+            menuScreen = document.getElementById('menu-screen');
+            moradorPrototype = document.getElementById('morador-prototype');
+            comerciantePrototype = document.getElementById('comerciante-prototype');
+            doadorPrototype = document.getElementById('doador-prototype');
+            gestorPrototype = document.getElementById('gestor-prototype');
+            proposePulseScreen = document.getElementById('propose-pulse-screen');
+            pulseDetailScreen = document.getElementById('pulse-detail-screen');
+            supplierRegistrationScreen = document.getElementById('supplier-registration-screen');
+
+            document.getElementById('morador-prototype').innerHTML = moradorHTML;
+            document.getElementById('comerciante-prototype').innerHTML = comercianteHTML;
+            document.getElementById('doador-prototype').innerHTML = doadorHTML;
+            document.getElementById('gestor-prototype').innerHTML = gestorHTML;
+            document.getElementById('propose-pulse-screen').innerHTML = proposePulseHTML;
+            document.getElementById('pulse-detail-screen').innerHTML = pulseDetailHTML;
+            document.getElementById('supplier-registration-screen').innerHTML = supplierRegistrationHTML;
+            
+            setupMoradorNav();
+            setupComercianteNav();
+            setupDoadorNav();
+            setupGestorNav();
+        });
+    </script>
+</body>
+</html>
