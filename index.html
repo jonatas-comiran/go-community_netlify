@@ -51,7 +51,7 @@
         <div class="container mx-auto px-4">
             <header class="py-6 flex justify-between items-center">
                 <h1 class="text-2xl font-nunito font-bold text-[#34495E]">GO Community</h1>
-                <button onclick="showPrototype('menu')" class="bg-gray-200 text-sm font-bold py-2 px-4 rounded-full hover:bg-gray-300 transition-colors">Acessar os Protótipos</button>
+                <button onclick="showPrototype('menu')" class="bg-gray-200 text-sm font-bold py-2 px-4 rounded-full hover:bg-gray-300 transition-colors">Aceder a Protótipos</button>
             </header>
 
             <section class="text-center py-16 md:py-24">
@@ -91,6 +91,35 @@
                         <div class="bg-yellow-100 w-16 h-16 rounded-full mx-auto flex items-center justify-center mb-4"><span class="text-3xl">🌳</span></div>
                         <h3 class="font-nunito font-bold text-xl mb-2">3. O Impacto Acontece</h3>
                         <p class="text-gray-600">A própria comunidade vota e decide como usar os fundos em "Pulsos" — projetos reais que melhoram a vida de todos.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="participe" class="py-16">
+                <div class="text-center mb-12">
+                    <h2 class="font-nunito font-bold text-3xl md:text-4xl">Faça Parte da Mudança</h2>
+                    <p class="text-gray-600 mt-2 max-w-2xl mx-auto">Selecione o seu perfil e preencha o formulário de interesse. Estamos ansiosos por tê-lo(a) connosco!</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+                    <div onclick="showFormModal('morador')" class="bg-white p-8 rounded-2xl shadow-lg cursor-pointer hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center">
+                        <span class="text-5xl mb-4">👥</span>
+                        <h3 class="text-2xl font-nunito font-bold text-[#34495E]">Sou Morador(a)</h3>
+                        <p class="text-gray-500 mt-2">Quero ver o meu bairro a prosperar e participar nas decisões.</p>
+                    </div>
+                    <div onclick="showFormModal('comerciante')" class="bg-white p-8 rounded-2xl shadow-lg cursor-pointer hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center">
+                        <span class="text-5xl mb-4">🏪</span>
+                        <h3 class="text-2xl font-nunito font-bold text-[#34495E]">Sou Comerciante</h3>
+                        <p class="text-gray-500 mt-2">Quero atrair mais clientes e conectar-me com a comunidade.</p>
+                    </div>
+                    <div onclick="showFormModal('entidade')" class="bg-white p-8 rounded-2xl shadow-lg cursor-pointer hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center">
+                        <span class="text-5xl mb-4">🤝</span>
+                        <h3 class="text-2xl font-nunito font-bold text-[#34495E]">Sou de uma Entidade</h3>
+                        <p class="text-gray-500 mt-2">Quero gerir projetos com transparência e ampliar o nosso impacto.</p>
+                    </div>
+                    <div onclick="showFormModal('prefeitura')" class="bg-white p-8 rounded-2xl shadow-lg cursor-pointer hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center">
+                        <span class="text-5xl mb-4">🏛️</span>
+                        <h3 class="text-2xl font-nunito font-bold text-[#34495E]">Sou Gestor Público</h3>
+                        <p class="text-gray-500 mt-2">Quero usar dados para tomar decisões e engajar os cidadãos.</p>
                     </div>
                 </div>
             </section>
@@ -160,6 +189,19 @@
             </div>
         </div>
     </div>
+    
+    <!-- Modal Formulário -->
+    <div id="formModal" class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 opacity-0 pointer-events-none">
+        <div class="modal-content bg-white rounded-2xl shadow-xl w-full max-w-3xl h-[90vh] flex flex-col transform scale-95">
+            <div class="flex justify-between items-center p-4 border-b">
+                <h3 id="formModalTitle" class="font-nunito font-bold text-xl text-[#34495E]"></h3>
+                <button onclick="closeFormModal()" class="text-gray-400 hover:text-gray-600 text-3xl leading-none">&times;</button>
+            </div>
+            <div id="formModalBody" class="flex-grow overflow-y-auto">
+                <!-- Iframe will be injected here -->
+            </div>
+        </div>
+    </div>
 
     <script>
         // --- CONTEÚDO HTML DOS PROTÓTIPOS ---
@@ -199,7 +241,7 @@
         };
         
         // --- LÓGICA DE NAVEGAÇÃO GERAL ---
-        let landingPageScreen, menuScreen, moradorPrototype, comerciantePrototype, doadorPrototype, gestorPrototype, proposePulseScreen, pulseDetailScreen, supplierRegistrationScreen;
+        let landingPageScreen, menuScreen, moradorPrototype, comerciantePrototype, doadorPrototype, gestorPrototype, proposePulseScreen, pulseDetailScreen, supplierRegistrationScreen, formModal;
         let currentOriginator = 'landing-page';
 
         function showPrototype(prototypeName) {
@@ -548,6 +590,42 @@
             }, 3000);
         }
 
+        const formUrls = {
+            morador: {
+                title: 'Formulário do Morador',
+                iframe: '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdpu2oa90Kmj9RWMRUTyolSJ9NVK4aLCB4kZucIASjnEG33xg/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">A carregar…</iframe>'
+            },
+            comerciante: {
+                title: 'Formulário do Comerciante',
+                iframe: '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdcpOfYF44AdFZ0lVokQX7Sh6-agt1loZRzD7Zg0V95uuUBSA/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">A carregar…</iframe>'
+            },
+            entidade: {
+                title: 'Formulário para Entidades',
+                iframe: '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSei1Ng-dIPgpuTzmcane9JNJeBze1hB879-bCbNacKv5Ek1dA/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">A carregar…</iframe>'
+            },
+            prefeitura: {
+                title: 'Formulário para Prefeituras',
+                iframe: '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSesF0OQ-NQ1-Mr0OcRmVb1xzy90src6hk_PugHNmBFMKNQTCw/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">A carregar…</iframe>'
+            }
+        };
+
+        function showFormModal(persona) {
+            const formInfo = formUrls[persona];
+            if (!formInfo) return;
+
+            document.getElementById('formModalTitle').textContent = formInfo.title;
+            document.getElementById('formModalBody').innerHTML = formInfo.iframe;
+
+            formModal.classList.remove('opacity-0', 'pointer-events-none');
+            formModal.querySelector('.modal-content').classList.remove('scale-95');
+        }
+
+        function closeFormModal() {
+            formModal.classList.add('opacity-0', 'pointer-events-none');
+            formModal.querySelector('.modal-content').classList.add('scale-95');
+            document.getElementById('formModalBody').innerHTML = '';
+        }
+
         // --- INICIALIZAÇÃO ---
         document.addEventListener('DOMContentLoaded', () => {
             landingPageScreen = document.getElementById('landing-page-screen');
@@ -559,6 +637,7 @@
             proposePulseScreen = document.getElementById('propose-pulse-screen');
             pulseDetailScreen = document.getElementById('pulse-detail-screen');
             supplierRegistrationScreen = document.getElementById('supplier-registration-screen');
+            formModal = document.getElementById('formModal');
 
             document.getElementById('morador-prototype').innerHTML = moradorHTML;
             document.getElementById('comerciante-prototype').innerHTML = comercianteHTML;
@@ -572,6 +651,9 @@
             setupComercianteNav();
             setupDoadorNav();
             setupGestorNav();
+
+            window.showFormModal = showFormModal;
+            window.closeFormModal = closeFormModal;
         });
     </script>
 </body>
